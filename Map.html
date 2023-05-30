@@ -1,0 +1,136 @@
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🥗wellness food for a happy life🍴</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets\css\style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+    
+    <!-- W3 CSS template -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <style>
+        #mapid {
+        height: 100%;
+        }
+        </style>
+</style>
+</head>
+<body>
+    <!-- เมนู-->
+    <nav class="navbar navbar-expand-lg bg-menu" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">🏠 HOME.</a><!-- หน้าหลัก -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0 justify-content-end">
+                    <li class="nav-item"><a class="nav-link px-lg-3 button-74" href="information.html">📝Information.</a></li><!-- ข้อมูล เนื้อหาอื่น -->
+                    <li class="nav-item"><a class="nav-link px-lg-3 button-74" href="Restaurant.html">🥗Restaurant</a></li><!-- ร้านอาหาร+รายละเอียด -->
+                    <li class="nav-item"><a class="nav-link px-lg-3 button-74" href="Map.html">📌 Map Restaurant.</a></li> <!-- แผนที่หมดร้าน -->
+                    <li class="nav-item"><a class="nav-link px-lg-3 button-74" href="contactme.html">📞 Contact Us.</a></li><!-- ข้อมูลที่อยู่มหาลัยกับชือเรา -->
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!-- เนื้อหา ข้อมูล -->
+    <center>
+    <b><em><h2 id="sub">📌 Map Restaurant</em></b></h2> 
+    
+    <div class="w3-row">
+        <div id="mapid" class="w3-half"></div>
+        <div id="content" class="w3-half">
+        <table class="w3-table w3-striped">
+        <tr>
+        <th>province</th>
+        <th>name</th>
+        <th>open</th>
+        <th>address</th>
+        <th>contact</th>
+        <th>link</th>
+        </tr>
+        </table>
+        </div>
+        </div>
+
+<script src = "food.js" ></script>
+</center>
+<script>
+
+var map = L.map("mapid").setView([13.797429733719634, 100.57726222417773], 13);
+ var osm = L.tileLayer(
+ "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+ ).addTo(map);
+ var gsat = L.tileLayer(
+ "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
+ ).addTo(map);
+ 
+ var baseMaps = {
+ OSM: osm,
+ GoogleSat: gsat,
+ };
+
+var foodLayer = L.geoJSON(food, {
+ pointToLayer: function (feature, latlng) {
+ return L.marker(latlng).bindPopup(feature.properties.name);
+ },
+ onEachFeature: function (feature, layer) {
+ layer.on("mouseover", function () {
+ document
+ .getElementById(feature.properties.name)
+ .classList.add("w3-red");
+ });
+ 
+ layer.on("mouseout", function () {
+ document
+ .getElementById(feature.properties.name)
+ .classList.remove("w3-red");
+ });
+ },
+ }).addTo(map);
+ 
+ var cont = "";
+cont += "<table class='table table-dark table-sm'>";
+ cont += "<tr>";  
+ cont += "<th>province</th>";
+ cont += "<th>name</th>";
+ cont += "<th>open</th>";
+ cont += "<th>address</th>";
+ cont += "<th>contact</th>";
+ cont += "<th>link</th>";
+ cont += "</tr>";
+ for (let i in food.features) {
+ cont += "<tr id=" + food.features[i].properties.name + ">";
+    cont += "<td>" + food.features[i].properties.province+ "</td>";
+ cont += "<td>" + food.features[i].properties.name+ "</td>";
+ cont += "<td>" + food.features[i].properties.open+ "</td>";
+ cont += "<td>" + food.features[i].properties.address + "</td>";
+ cont += "<td>" + food.features[i].properties.contact + "</td>";
+ cont += "<td>" + food.features[i].properties.link + "</td>";
+ cont += "</tr>";
+ }
+ cont += "</table>";
+ console.log(cont);
+ document.getElementById("content").innerHTML = cont;
+
+ var overlays = {ร้านอาหาร: foodLayer};
+ //add leyer control
+ L.control.layers(baseMaps, overlays).addTo(map);
+
+
+</script>
+
+
+</body>
+</html>

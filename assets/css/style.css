@@ -1,0 +1,272 @@
+body {
+  background-color: #617A55;
+}
+
+body::before {
+  content: "";
+  background: url("../image/healthy.jpg");
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+.bg-menu{
+    background-color: #92CD28;
+}
+.bg-btn-menu:hover{
+    background-color: coral;
+}
+
+/* CSS */
+.button-74 {
+  background-color: #F78914;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-74:hover {
+  background-color: #fff;
+}
+
+.button-74:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-74 {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+
+header.masthead {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-top: calc(8rem + 57px);
+    padding-bottom: 8rem;
+    background: no-repeat center center;
+    background-color: #6c757d;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+  header.masthead:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #212529;
+    opacity: 0.5;
+  }
+  header.masthead .page-heading,
+  header.masthead .post-heading,
+  header.masthead .site-heading {
+    color: #fff;
+  }
+  header.masthead .page-heading,
+  header.masthead .site-heading {
+    text-align: center;
+  }
+  header.masthead .page-heading h1, header.masthead .page-heading .h1,
+  header.masthead .site-heading h1,
+  header.masthead .site-heading .h1 {
+    font-size: 2rem;
+  }
+  header.masthead .page-heading .subheading,
+  header.masthead .site-heading .subheading {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+    display: block;
+    margin-top: 0.625rem;
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  header.masthead .post-heading h1, header.masthead .post-heading .h1 {
+    font-size: 2.25rem;
+  }
+  header.masthead .post-heading .meta,
+  header.masthead .post-heading .subheading {
+    line-height: 1.1;
+    display: block;
+  }
+  header.masthead .post-heading .subheading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0.75rem 0 2rem;
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  header.masthead .post-heading .meta {
+    font-size: 1.25rem;
+    font-weight: 300;
+    font-style: italic;
+    font-family: "Lora", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  header.masthead .post-heading .meta a {
+    color: #fff;
+  }
+  @media (min-width: 992px) {
+    header.masthead {
+      padding-top: 12.5rem;
+      padding-bottom: 12.5rem;
+    }
+    header.masthead .page-heading h1, header.masthead .page-heading .h1,
+    header.masthead .site-heading h1,
+    header.masthead .site-heading .h1 {
+      font-size: 4rem;
+    }
+    header.masthead .post-heading h1, header.masthead .post-heading .h1 {
+      font-size: 3.5rem;
+    }
+    header.masthead .post-heading .subheading {
+      font-size: 1.875rem;
+    }
+  }
+
+/* CSS */
+.button-52 {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-52:after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-52:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .button-52 {
+    padding: 13px 50px 13px;
+  }
+}
+
+.shadow-rigth{
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+}
+.shadow-left{
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+}
+
+
+a {
+  color: #FFF8D6;
+
+}
+.circular{
+  border-radius: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   letter-spacing: 0;
+   font-weight: normal;
+   position: relative;
+   padding: 0;
+   font-weight: normal;
+   line-height: normal;
+   color: #fff;
+   margin: 0
+}
+
+h1 {
+   font-size: 80px;
+}
+
+h2 {
+   font-size: 40px;
+}
+
+h3 {
+   font-size: 30px;
+}
+
+h4 {
+   font-size: 25px
+}
+
+h5 {
+   font-size: 16px
+}
+
+h6 {
+   font-size: 14px
+}
+
+
+p{ 
+  color: #000;
+  font-family: monospace;
+  
+}
+
+hr{ border-style: none; 
+  border-top-style: dotted;
+  border-color:#FFF8D6;
+  border-width: 5px; 
+  width: 90%;}
+img{
+  background-color:none;
+}
+
+#heading{
+
+  color: #ffffff;
+  font-style: italic;
+  font-family:monospace;
+}
+
+#sub{
+
+  color: #ffad3a;
+  font-style: normal;
+  font-family:monospace;
+}
+
+#content{
+
+  color: #93BFCF ;
+  font-style: normal;
+  font-family:monospace;
+
+}
